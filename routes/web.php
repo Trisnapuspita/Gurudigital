@@ -18,6 +18,11 @@ Route::get('/coba', function(){
     return view('satu');
 });
 
+//tiket
+Route::get('/tiket', function(){
+    return view('tiket');
+});
+
 Route::get('/cobaa', function(){
     return view('dua');
 });
@@ -27,48 +32,90 @@ Route::get('/cobaaa', function(){
 });
 
 Route::get('/details/1', function(){
-    return view('guru/landing/detailprogram');
+    return view('landing/detailprogram');
 });
 
 Route::get('/details/2', function(){
-    return view('guru/landing/detailevent');
+    return view('landing/detailevent');
 });
 
 Route::get('/daftar', function(){
-    return view('guru/landing/daftar');
+    return view('landing/daftar');
 });
 
 Route::get('/info', function () {
-    return view('guru/landing/info');
+    return view('landing/info');
 });
 
 Route::get('/event', function () {
-    return view('guru/landing/event');
+    return view('landing/event');
 });
 
 Route::get('/program', function () {
-    return view('guru/landing/program');
+    return view('landing/program');
 });
 
 Route::get('/event/edit', function () {
-    return view('guru/eventedit');
+    return view('eventedit');
 });
 
 Route::get('/program/edit', function () {
-    return view('guru/programedit');
+    return view('programedit');
 });
 
+Route::get('/lihatpendaftar', function(){
+    return view('program/lihatpendaftar');
+});
+
+Route::get('/tentangkami', 'TestimoniController@tentangkami');
+
+Route::get('/kegiatan', 'BeritaController@index');
+Route::get('/kegiatan/{id}', 'BeritaController@show');
+
+Route::get('/bimbel', 'HomeController@bimbel');
+
+Route::get('/kontak', 'HomeController@kontak');
+
 //guru digital - info
-Route::get('/gurudigital/info/create', 'GuruController@create_info');
-Route::post('/gurudigital/info', 'GuruController@store_info');
+Route::get('/gurudigital/info/create', 'HomeController@create_info');
+Route::post('/gurudigital/info', 'HomeController@store_info');
 //guru digital - Program
-Route::get('/gurudigital/program/create', 'GuruController@create_program');
-Route::post('/gurudigital/program', 'GuruController@store_program');
-Route::get('/gurudigital/programs', 'GuruController@program');
+Route::get('/gurudigital/program/create', 'HomeController@create_program');
+Route::post('/gurudigital/program', 'HomeController@store_program');
+Route::get('/gurudigital/programs', 'HomeController@program');
+Route::get('/gurudigital/programs/pendaftar', 'HomeController@atttendeeprogram');
+Route::get('/gurudigital/programs/semuapendaftar', 'HomeController@listattendee');
 //guru digital - Berita
-Route::get('/gurudigital/event/create', 'GuruController@create_event');
-Route::post('/gurudigital/event', 'GuruController@store_event');
-Route::get('/gurudigital/events', 'GuruController@event');
+Route::get('/gurudigital/event/create', 'HomeController@create_event');
+Route::post('/gurudigital/event', 'HomeController@store_event');
+Route::get('/gurudigital/events', 'HomeController@event');
+//karyawan
+Route::get('/gurudigital/karyawan', 'HomeController@daftarkaryawan');
+Route::get('/admin/informasi', 'adminController@infohome');
+Route::get('/admin/berita', 'BeritaController@beritaadm');
+Route::resource('profil', 'ProfilController');
+Route::resource('misi', 'MisiController');
+Route::resource('testimoni', 'TestimoniController');
+Route::resource('kelas', 'KelasController');
+Route::get('profil2', 'ProfilController@editprofil2');
+Route::put('profil2', 'ProfilController@updateprofil2');
+Route::get('visi', 'ProfilController@editvisi');
+Route::put('visi', 'ProfilController@updatevisi');
+//melihat data guru dan siswa
+Route::get('/admin/data-guru', 'adminController@data_guru');
+Route::get('/admin/data-siswa', 'adminController@data_siswa');
+//melihat data pendaftar
+Route::get('/admin/data-pendaftar', 'PendaftaranController@index');
+Route::get('/admin/data-pendaftar/{id}', 'PendaftaranController@show');
+//create berita
+Route::get('/beritas/create', 'BeritaController@create');
+Route::post('/beritas', 'BeritaController@store');
+//edit berita
+Route::get('/beritas/{id}/edit', 'BeritaController@edit');
+Route::put('/beritas/{id}', 'BeritaController@update');
+Route::delete('/beritas/{id}', 'BeritaController@destroy');
+
+Route::get('/admin/informasi', 'adminController@infohome');
 
 Auth::routes();
 

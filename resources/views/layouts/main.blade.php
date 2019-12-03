@@ -67,9 +67,9 @@
 									<div class="header-row">
 										<nav class="header-nav-top">
 											<ul class="nav">
-												{{-- <li>Telepon: <span class="ws-nowrap"><a class="text-decoration-none">{{ DB::table('profils')->value('telepon') }}</a></span></li>
+												<li>Telepon: <span class="ws-nowrap"><a class="text-decoration-none">{{ DB::table('profils')->value('telepon') }}</a></span></li>
 												<li class="d-none d-md-block"> Email: <span class="ws-nowrap"><a class="text-decoration-none">{{ DB::table('profils')->value('email') }}</a></span></li>
-												<li class="d-none d-lg-block">Waktu Kerja: <span class="ws-nowrap"><a class="text-decoration-none">{{ DB::table('profils')->value('waktu_kerja') }}</a></span></li> --}}
+												<li class="d-none d-lg-block">Waktu Kerja: <span class="ws-nowrap"><a class="text-decoration-none">{{ DB::table('profils')->value('waktu_kerja') }}</a></span></li>
 											</ul>
 										</nav>
 									</div>
@@ -82,13 +82,13 @@
 												{{-- <li><a href="{{ url('/daftar-bimbel') }}"><span class="ws-nowrap"><i class="fas fa-user-plus"></i></i> Daftar</span></a></li> --}}
 												<li><a href="{{ url('/login') }}"><span class="ws-nowrap"><i class="fas fa-user"></i> Masuk</span></a></li>
                                                 @else
-                                                @if(Auth::user()->role == 4)
+                                                @if(Auth::user()->role == 1)
+                                                <li><a href="/home" class="ws-nowrap"><i class="fas fa-user"></i> {{ Auth::user()->name }}</a>
+                                                </li>
+                                                @else
                                                 <li><a class="ws-nowrap"><i class="fas fa-user"></i> {{ Auth::user()->name }}</a>
                                                 </li>
                                                 <li><a href="/tiket" class="ws-nowrap"><i class="fas fa-ticket-alt"></i> Tiket</a>
-                                                </li>
-                                                @else
-                                                <li><a href="/home" class="ws-nowrap"><i class="fas fa-user"></i> {{ Auth::user()->name }}</a>
                                                 </li>
                                                 @endif
                                                 <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();
@@ -111,7 +111,7 @@
 								<div class="header-row">
 									<div class="header-logo py-2">
 										<a href="/">
-											<img alt="Porto" width="200" src="/img/logo-gd.png">
+											<img alt="Porto" width="160" src="/img/logo-gd.png">
 										</a>
 									</div>
 								</div>
@@ -169,10 +169,10 @@
 					<div class="row justify-content-between">
 						<div class="col-lg-3 mb-0 mb-lg-0">
 							<h2 class="font-weight-semibold text-color-light text-6 mb-3">Detail Kontak</h2>
-							{{-- <p>Alamat: {{ DB::table('profils')->value('alamat') }}
+							<p>Alamat: {{ DB::table('profils')->value('alamat') }}
 							<br>Telepon: {{ DB::table('profils')->value('telepon') }}
 							<br>Email: {{ DB::table('profils')->value('email') }}
-							</p> --}}
+							</p>
 						</div>
 						<div class="col-lg-4 mb-0 mb-lg-0">
 							<div class="row">
@@ -201,7 +201,7 @@
 						<div class="col-lg-3 mb-0 mb-lg-0">
 							<div class="row">
 								<div class="col">
-									<h2 class="font-weight-semibold text-color-light text-6 mb-3">Teras Diskusi</h2>
+									<h6 class="font-weight-semibold text-color-light text-6 mb-3">Komunitas Guru Digital</h6>
 								</div>
 							</div>
 							<div class="row">

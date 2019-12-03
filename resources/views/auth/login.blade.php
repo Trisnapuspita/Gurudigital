@@ -6,15 +6,15 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>Teras Diskusi | Masuk</title>
+		<title>Komunitas Guru Digital | Masuk</title>
 
 		<meta name="keywords" content="Education" />
 		<meta name="description" content="Teras Diskusi">
 		<meta name="author" content="terasdiskusi.com">
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="/img/logoteras.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="/img/logoteras.jpg">
+        <link rel="shortcut icon" href="/img/logogd.png"/>
+		<link rel="apple-touch-icon" href="/img/logogd.png">
 
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
@@ -30,8 +30,6 @@
 		<link rel="stylesheet" href="/vendor/owl.carousel/assets/owl.carousel.min.css">
 		<link rel="stylesheet" href="/vendor/owl.carousel/assets/owl.theme.default.min.css">
         <link rel="stylesheet" href="/vendor/magnific-popup/magnific-popup.min.css">
-
-        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -89,9 +87,9 @@
 									<div class="header-row">
 										<nav class="header-nav-top">
 											<ul class="nav">
-												{{-- <li>Telepon: <span class="ws-nowrap"><a class="text-decoration-none">{{ DB::table('profils')->value('telepon') }}</a></span></li>
+												<li>Telepon: <span class="ws-nowrap"><a class="text-decoration-none">{{ DB::table('profils')->value('telepon') }}</a></span></li>
 												<li class="d-none d-md-block"> Email: <span class="ws-nowrap"><a class="text-decoration-none">{{ DB::table('profils')->value('email') }}</a></span></li>
-												<li class="d-none d-lg-block">Waktu Kerja: <span class="ws-nowrap"><a class="text-decoration-none">{{ DB::table('profils')->value('waktu_kerja') }}</a></span></li> --}}
+												<li class="d-none d-lg-block">Waktu Kerja: <span class="ws-nowrap"><a class="text-decoration-none">{{ DB::table('profils')->value('waktu_kerja') }}</a></span></li>
 											</ul>
 										</nav>
 									</div>
@@ -119,7 +117,7 @@
 								<div class="header-row">
 									<div class="header-logo py-2">
 										<a href="/">
-											<img alt="Porto" width="100" height="80" src="/img/demos/education/logox.png">
+											<img alt="Porto" width="170"  src="/img/logo-gd.png">
 										</a>
 									</div>
 								</div>
@@ -145,15 +143,10 @@
 															Berita
 														</a>
 													</li>
-                                                    <li class="dropdown">
-                                                        <a class="dropdown-item dropdown-toggle @yield('navbar_guru')">
+                                                    <li>
+                                                        <a class="nav-link @yield('navbar_guru')">
                                                             Guru Digital
                                                         </a>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a class="dropdown-item" href="/info">Info</a></li>
-                                                            <li><a class="dropdown-item" href="/program">Program</a></li>
-                                                            <li><a class="dropdown-item" href="/event">Berita</a></li>
-                                                        </ul>
                                                     </li>
 													<li>
                                                         <a class="nav-link @yield('navbar_kontak')" href="{{ url('/kontak') }}">
@@ -231,7 +224,6 @@
                                                 Remember me
                                             </label>
                                         </div>
-
                                         <div>
                                             <a href="{{ route('password.request') }}" class="txt1">
                                                 Forgot Password?
@@ -244,6 +236,14 @@
                                             Login
                                         </button>
                                     </div>
+                                    &nbsp;
+                                    <div class="flex-sb-m w-full p-b-30">
+                                        <div>
+                                            <a href="/register" class="txt1">
+                                                Belum memiliki akun? <br> Daftar Sekarang!
+                                            </a>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -254,9 +254,9 @@
 					<div class="row justify-content-between">
 						<div class="col-lg-3 mb-0 mb-lg-0">
 							<h2 class="font-weight-semibold text-color-light text-6 mb-3">Detail Kontak</h2>
-							{{-- <p>Alamat: {{ DB::table('profils')->value('alamat') }}
+							<p>Alamat: {{ DB::table('profils')->value('alamat') }}
 							<br>Telepon: {{ DB::table('profils')->value('telepon') }}
-							<br>Email: {{ DB::table('profils')->value('email') }} --}}
+							<br>Email: {{ DB::table('profils')->value('email') }}
 							</p>
 						</div>
 						<div class="col-lg-4 mb-0 mb-lg-0">
@@ -286,7 +286,7 @@
 						<div class="col-lg-3 mb-0 mb-lg-0">
 							<div class="row">
 								<div class="col">
-									<h2 class="font-weight-semibold text-color-light text-6 mb-3">Teras Diskusi</h2>
+									<h6 class="font-weight-semibold text-color-light text-6 mb-3">Komunitas Guru Digital</h6>
 								</div>
 							</div>
 							<div class="row">

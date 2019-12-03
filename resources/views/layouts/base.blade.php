@@ -11,7 +11,7 @@
                 <!-- BEGIN LOGO -->
                 <div class="page-logo">
                     <a href="/">
-                        <img src="{{asset('/img/logo-terdis.png')}}" alt="logo" class="logo-default" width="125"/> </a>
+                        <img src="{{asset('/img/logo-gdd.png')}}" alt="logo" class="logo-default" width="90"/> </a>
                     <div class="menu-toggler sidebar-toggler">
                         <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
                     </div>
